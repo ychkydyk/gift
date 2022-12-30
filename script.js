@@ -1,7 +1,7 @@
 function vm(){
   var self = this;
   self.giftStatus = ko.observable('start');
-  
+
   self.changeStatus = function(status){
     self.giftStatus(status);
   }
