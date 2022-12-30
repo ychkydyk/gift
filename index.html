@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Gift</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main class="hasIntro">
+  <section class="gift-card collapsed">
+    <!--ko if: giftStatus() == 'start'-->
+    <div id="particles-js"></div>
+    <div class="text-center intro">
+    <h2>С Новым Годом и Днём Рождения!!!</h2>
+  
+    <div class="gift-image"></div>
+    <a href='#' class="btn-main" data-bind="click: changeStatus.bind($data,'opened')">Открыть подарок</a>
+    </div>
+    <!--/ko-->
+    <!--ko if: giftStatus() == 'opened'-->
+    <div class="row justify-start text-left">
+      <div class="message-photo"></div>
+      <div class="message">
+        <h1>3 билета на концерт А.Розенбаума</h1>
+      </div>
+      
+    </div>
+     
+    <div class="holding-info border-top">
+      <div class="">
+       
+        <div class="sml darker m-t-20 m-b-6">Дата концерта</div>
+        <div class="heading-lrg">24.02.23</div>
+
+        <div class="m-t-10">
+          <h2 class="heading-mid">г.Мытищи ДК "Яуза"</h2>
+        </div>
+        
+        <div class="row justify-between">
+           <a class="add" data-bind="click: changeStatus.bind($data,'accepted')" href="#">скачать билет</a>
+
+        </div>
+      </div>
+    
+      
+    
+    </div>
+    <!--/ko-->
+    <!--ko if: giftStatus() == 'accepted'-->
+    <h2>Your Holdings</h2>
+     <div class="holding-info border-top m-t-10 p-t-10">
+      <a class="decoration-none" href="#" data-bind="click: changeStatus.bind($data,'holdingDetail')">
+       </a>
+    </div>
+    <!--/ko-->
+    
+    <!--ko if: giftStatus() == 'holdingDetail'-->
+   
+    <div class="row justify-between">
+      <div>
+        <div class="sml darker m-t-20">Units held</div>
+        <div class="heading-36">358.44</div>
+      </div>
+      <div>
+        <div class="sml darker m-t-20">Current Value</div>
+        <div class="heading-36">15,021.23 <span class="sml">USD</span></div>
+      </div>
+    </div>
+    <div class="row justify-between">
+      <a class="btn-main btn-trade" href="#">Buy More</a>
+      <a class="btn-main btn-trade" href="#">Sell</a>
+      <a class="btn-main btn-trade" href="#">Swap</a>
+    </div>
+    
+    <ul class="graph-nav">
+      <li><a href="#" class="active">1D</a></li>
+      <li><a href="#">1W</a></li>
+      <li><a href="#">1M</a></li>
+      <li><a href="#">6M</a></li>
+      <li><a href="#">1Y</a></li>
+      <li><a href="#">5Y</a></li>
+    </ul>
+    <div class="chart"></div>
+    
+  
+  <!--/ko-->
+    
+    
+    
+  </section>
+  <!--ko if: giftStatus() == 'accepted'-->
+   
+  <!--/ko-->
+  
+  
+  
+</main>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js'></script>
+<script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
