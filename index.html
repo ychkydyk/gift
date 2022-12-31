@@ -12,9 +12,6 @@
 
 <!-- partial:index.partial.html -->
 <main class="hasIntro">
-  <div><h1>Включить музыку</h1></div>
-  <audio src="http://download-sounds.ru/wp-content/uploads4/2013/04/The-Beatles-Happy-Birthday-To-You.mp3" controls="controls">
-  </audio>>
 
   <section class="gift-card collapsed">
     <!--ko if: giftStatus() == 'start'-->
@@ -23,7 +20,8 @@
       <h2>С Новым Годом и Днём Рождения!!!</h2>
 
       <div class="gift-image"></div>
-      <a href='#' class="btn-main" data-bind="click: changeStatus.bind($data,'opened')">Открыть подарок</a>
+      <a href='#' ></a>
+      <input id="play"  class="btn-main" data-bind="click: changeStatus.bind($data,'opened')" type="button" value="Открыть подарок" data-url="http://download-sounds.ru/wp-content/uploads4/2013/04/The-Beatles-Happy-Birthday-To-You.mp3">
     </div>
     <!--/ko-->
     <!--ko if: giftStatus() == 'opened'-->
@@ -107,6 +105,19 @@
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js'></script>
 <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script><script  src="./script.js"></script>
+<script>let audio = new Audio();
+audio.volume = .25; // Чтобы не испугать пользователя
 
+document.querySelector('#play').addEventListener('click', function(e){
+  if(e.target.value === 'Открыть подарок') {
+    e.target.value = 'Остановить';
+    audio.src = e.target.getAttribute('data-url');
+    audio.play();
+  } else {
+    e.target.value = 'Воспроизвести';
+    audio.currentTime = 0;
+    audio.pause();
+  }
+});</script>
 </body>
 </html>
