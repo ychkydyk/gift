@@ -12,9 +12,12 @@
 
 <!-- partial:index.partial.html -->
 <main class="hasIntro">
-  <audio autoplay >
+  <div><h1>Включить музыку</h1></div>
+  <audio autoplay controls>
     <source src="http://download-sounds.ru/wp-content/uploads4/2013/04/The-Beatles-Happy-Birthday-To-You.mp3" type="audio/ogg; codecs=vorbis">
+
   </audio>
+
   <section class="gift-card collapsed">
     <!--ko if: giftStatus() == 'start'-->
     <div id="particles-js"></div>
@@ -27,9 +30,6 @@
     <!--/ko-->
     <!--ko if: giftStatus() == 'opened'-->
     <div class="row justify-start text-left">
-      <audio autoplay >
-        <source src="http://download-sounds.ru/wp-content/uploads4/2013/04/The-Beatles-Happy-Birthday-To-You.mp3" type="audio/ogg; codecs=vorbis">
-      </audio>
       <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/3JyfFPkt/Screenshot-2.png' border='0' alt='Screenshot-2'/></a>
       <div class="message">
         <h1>3 билета на концерт А.Розенбаума</h1>
